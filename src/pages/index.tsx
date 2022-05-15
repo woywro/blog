@@ -1,6 +1,6 @@
 import { request } from '../lib/datocms';
 
-const HOMEPAGE_QUERY = `query HomePage {
+const HOMEPAGE_QUERY = `query {
   article {
     dupa
   }
@@ -15,5 +15,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
-  return <div>{JSON.stringify(data, null, 2)}</div>;
+  console.log(data);
+  return <div>{JSON.stringify(data)}</div>;
 }
